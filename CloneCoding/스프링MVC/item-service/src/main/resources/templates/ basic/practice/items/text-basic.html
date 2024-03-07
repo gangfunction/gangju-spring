@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+        lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>컨텐츠에 데이터 출력하기</h1>
+<ul>
+    <li>th:text사용 = <span th:text="${data}"></span></li>
+    <li>th:utext = <span th:utext="${data}"></span> </li>
+    <li>컨텐츠안에서 직접 출력하기 = [[${data}]]</li>
+</ul>
+    <h1><span th:inline="none">[[...]] vs [(...)]</span></h1>
+<ul>
+    <li><span th:inline="none">[[...]] =</span>[[${data}]]</li>
+    <li><span th:inline="none">[(...)] =</span>[(${data})]</li>
+</ul>
+<ul>
+    <li>
+        1>10 = <span th:text="1 &gt; 10"></span>
+    </li>
+    <li>
+        ${data?: _ = <span th:text="${data} ?: _ "></span>
+    </li>
+    <input type="text" name ="mock" th:name="userA"/>
+    <h1> 속성추가</h1>
+    -th :attrappend = <input type = "text" class = "text" th:attrappend = "class=' large'" /> <br/>
+    -th :attrpreppend = <input type = "text" class = "text" th:attrpreppend = "class='large '" /> <br/>
+    -th :classappend = <input type = "text" class = "text" th:classappend = "class='large'" /> <br/>
+    checked - <input type = "checkbox" name = "active" th:checked="false"/>
+
+</ul>
+</body>
+</html>
